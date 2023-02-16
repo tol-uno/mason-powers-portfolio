@@ -15,9 +15,9 @@ function init() {
     // GLTF LOADER
     var model;
     const gltfLoader = new GLTFLoader();
-    gltfLoader.load("assets/models/truck.glb", function (glbModel){
+    gltfLoader.load("assets/models/caspita.glb", function (glbModel){
         loadedModel = glbModel;
-        glbModel.scene.scale.set(.02,.02,.02);
+        glbModel.scene.scale.set(2.0,2.0,2.0);
         glbModel.scene.position.z = 0;
         glbModel.scene.position.x = 0;
         glbModel.scene.position.y = 0;
@@ -34,20 +34,34 @@ function init() {
     
     // CAMERA
     camera = new THREE.PerspectiveCamera(
-        15, 
+        20, 
         modelWindow.offsetWidth / modelWindow.offsetHeight,
         0.1, 
         1000,
     );
-    camera.position.z = 35;
-    camera.position.y = 2;
+    camera.position.z = 23;
+    camera.position.y = 1.8;
   
     //LIGHT
-    const color = 0xffffff;
-    const intensity = 1;
-    const light = new THREE.DirectionalLight(color, intensity);
-    light.position.set( 1, 3, 5);
-    scene.add(light);
+    createLight(0xffffff, 4, 4, 5, 5)
+    createLight(0xffffff, 1.5, -2, 1, 0)
+
+    function createLight(color, intensity, x, y, z) {
+        const light = new THREE.DirectionalLight(color, intensity);
+        light.position.set( x, y, z);
+        scene.add(light);
+    }
+
+    //PLANE
+    plane = new THREE.Mesh(new THREE.PlaneGeometry(4.2,9), new THREE.MeshPhongMaterial({color: "#010101"}));
+    plane.rotation.x = -(Math.PI / 2);
+    plane.rotation.z = 0.7
+    plane.position.x = 0;
+    plane.position.y = 0;
+    plane.position.z = 0;
+    scene.add(plane);
+
+
 }
 
 
@@ -58,6 +72,8 @@ function animate() {
     if (loadedModel) {
         // console.log();
         loadedModel.scene.rotation.y = -document.documentElement.scrollTop / 1000 + 0.6
+        plane.rotation.z = -document.documentElement.scrollTop / 1000 + 0.6
+
     };
 }
 
