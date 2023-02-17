@@ -15,7 +15,7 @@ function init() {
     // GLTF LOADER
     var model;
     const gltfLoader = new GLTFLoader();
-    gltfLoader.load("assets/models/caspita.glb", function (glbModel){
+    gltfLoader.load("assets/models/assets/models/HurricanSTO_v1.glb", function (glbModel){
         loadedModel = glbModel;
         glbModel.scene.scale.set(2.0,2.0,2.0);
         glbModel.scene.position.z = 0;
@@ -42,9 +42,12 @@ function init() {
     camera.position.z = 23;
     camera.position.y = 1.8;
   
-    //LIGHT
+    //LIGHTS
     createLight(0xffffff, 4, 4, 5, 5)
     createLight(0xffffff, 1.5, -2, 1, 0)
+
+    // const ambLight = new THREE.AmbientLight(0xffffff, 10); // ambient light. only works on textures. can be used for baked raytracing textures.
+    // scene.add(ambLight);
 
     function createLight(color, intensity, x, y, z) {
         const light = new THREE.DirectionalLight(color, intensity);
