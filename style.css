@@ -1,46 +1,111 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #0B2F4E;
     height: 4000px;
+    width: 100vw;
+    margin: 0;
+    /* padding-top: 10%; */
+    /* overflow-x: hidden; */
+}
+
+.hide-overflow {
+    width: 100%;
+    height: 4000px;
+    overflow-x: hidden;
 }
 
 h1 {
+    margin: 10%;
+    margin-top: 20%;
+    margin-bottom: 20%;
     font-family: 'Noto Serif', Courier, monospace;
-    font-size: 4vw;
+    font-size: 10vw;
     color: #FEA46B;
     text-align: center;
 }
 
 h2 {
     font-family: Arial, Helvetica, sans-serif;
-
+    color: #FEA46B;
 }
 
 .textbox {
-    margin-left: 10vw;
-    margin-top: 22vh;
-    width: 40vw;
-    height:30vw;
+    /* margin-left: 5vw; */
+    /* margin-top: 22vh; */
+    width: 100%;
+    /* height:30vw; */
     justify-content: center;
     align-content: center;
 }
 
-.floater {
-    position: relative;
-    padding: 15px;
-    margin: 200px;
-    width: 360px;
-    height: 120px;
-    background-color: white;
-    border-radius: 10px;
-    border: 3px solid black;
-    box-shadow: -10px 10px #0F1035;
+hr {
+    width: 80%; 
+    height: 2vw;
+    background: #FEA46B;
+
 }
 
+ul {
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 5%;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+li {
+    display: inline-block;
+    margin: auto;
+    padding: 2%;
+}
+
+a {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 6vw;
+    color: #FEA46B;
+}
+
+.floater {
+    display: grid;
+    position: relative;
+    margin-top: 8vh;
+    width: 50%;
+    height: 20vh;
+    place-items: center;
+    border-radius: 4vw;
+    z-index: -1;
+
+    /* border: 2px solid white; */
+    transition: 0.2s all ease-out;
+    box-shadow: 10 10 20 0 black;
+    box-shadow: 5px 5px 25px 0px rgba(4, 4, 16, 0.7),  -5px -5px 20px 0px rgba(136, 136, 204, 0.5);
+}
+
+.floater.left {
+    left: -60%;
+}
+
+.floater.right {
+    left: 110%;
+}
+
+.floater.inview {
+    left: 25%;
+}
+
+
 #model {
-    width: 60vw;
-    height: 40vw;
-    left: 40%;
-    top: 2vw;
+    width: 100%;
+    height: 40%;
+    left: 0%;
+    top: 48vh;
     position: fixed;
 }
 

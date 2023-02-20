@@ -15,9 +15,9 @@ function init() {
     // GLTF LOADER
     var model;
     const gltfLoader = new GLTFLoader();
-    gltfLoader.load("assets/models/assets/models/HurricanSTO_v1.glb", function (glbModel){
+    gltfLoader.load("assets/models/HurricanSTO_v1.glb", function (glbModel){
         loadedModel = glbModel;
-        glbModel.scene.scale.set(2.0,2.0,2.0);
+        glbModel.scene.scale.set(1.0,1.0,1.0);
         glbModel.scene.position.z = 0;
         glbModel.scene.position.x = 0;
         glbModel.scene.position.y = 0;
@@ -39,14 +39,21 @@ function init() {
         0.1, 
         1000,
     );
-    camera.position.z = 23;
-    camera.position.y = 1.8;
+    camera.position.z = 13;
+    camera.position.y = .8;
   
     //LIGHTS
-    createLight(0xffffff, 4, 4, 5, 5)
-    createLight(0xffffff, 1.5, -2, 1, 0)
+    var light_height = 2;
+    var light_intensity = 1.5;
 
-    // const ambLight = new THREE.AmbientLight(0xffffff, 10); // ambient light. only works on textures. can be used for baked raytracing textures.
+    createLight(0xffffff, light_intensity, -8, light_height, -8);
+    createLight(0xffffff, light_intensity, -8, light_height, 8);
+    createLight(0xffffff, light_intensity, 8, light_height, -8);
+    createLight(0xffffff, light_intensity, 8, light_height, 8);
+    createLight(0xffffff, 5, 0, 8, 0);
+
+
+    // const ambLight = new THREE.AmbientLight(0xffffff, 2); // ambient light. only works on textures. can be used for baked raytracing textures.
     // scene.add(ambLight);
 
     function createLight(color, intensity, x, y, z) {
@@ -55,8 +62,9 @@ function init() {
         scene.add(light);
     }
 
-    //PLANE
-    plane = new THREE.Mesh(new THREE.PlaneGeometry(4.2,9), new THREE.MeshPhongMaterial({color: "#010101"}));
+
+    // PLANE
+    plane = new THREE.Mesh(new THREE.PlaneGeometry(2.3, 5), new THREE.MeshPhongMaterial({color: "#010101"}));
     plane.rotation.x = -(Math.PI / 2);
     plane.rotation.z = 0.7
     plane.position.x = 0;
@@ -65,15 +73,19 @@ function init() {
     scene.add(plane);
 
 
-}
+    // plane = new THREE.Mesh(new THREE.PlaneGeometry(1, 1, 1), new THREE.MeshPhongMaterial({color: "#010101"}));
+    // plane.position.x = -8;
+    // plane.position.y = 2;
+    // plane.position.z = -8;
+    // scene.add(plane);
+
+} // END OF init()
 
 
 function animate() {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
-    // console.log(model);
     if (loadedModel) {
-        // console.log();
         loadedModel.scene.rotation.y = -document.documentElement.scrollTop / 1000 + 0.6
         plane.rotation.z = -document.documentElement.scrollTop / 1000 + 0.6
 
@@ -88,6 +100,24 @@ function onWindowResize() {
 }
 
 
+function reveal() { // for floaters to animate in
+    var floaters = document.querySelectorAll(".floater")
+    var scrollInAt = (window.innerHeight * 0.55); // float = the percentage down page that the element should come in at
+
+    for (var i = 0; i < floaters.length; i++) {
+        var elementBot = floaters[i].getBoundingClientRect().bottom;
+
+        if (elementBot < scrollInAt) {
+            floaters[i].classList.add("inview");
+        } else {
+            floaters[i].classList.remove("inview");
+        }
+    }
+}
+
+document.addEventListener("scroll", reveal);
+
+reveal(); // to check scroll position on page (re)load
 
 
 
