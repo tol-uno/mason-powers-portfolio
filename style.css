@@ -57,9 +57,21 @@ h2 {
 }
 
 hr {
-    width: 80%; 
-    height: 2vw;
-    background: #FEA46B;
+    /* width: 80%;  */
+    margin-top: 15%;
+    height: 1.5vw;
+    background: #110f0d;
+    transition: all 0.15s ease-in-out;
+}
+
+hr.floater {
+    opacity: 0;
+    width: 0%;
+}
+
+hr.floater.inview {
+    opacity: 1;
+    width: 80%
 }
 
 .navbar {
@@ -80,7 +92,7 @@ hr {
 .menu-item {
     text-align: center;
     text-decoration: none;
-    padding: 4px;
+    padding: 1% 1% 1.5% 1%;
     width: 33.33%;
     margin: 3vw;
 
@@ -93,12 +105,13 @@ hr {
     border: 0.7vw solid #110f0d;
 }
 
-a {
-
+.menu-item:active {
+    color: #FFFFFF;
+    background-color: #110f0d;
 }
 
 
-.floater {
+.floater:not(hr) {
     display: grid;
     position: relative;
     margin-top: 10vh;
@@ -120,7 +133,7 @@ a {
     left: 120%;
 }
 
-.floater.inview {
+.floater.inview:not(hr) {
     left: 15%;
 }
 

@@ -88,7 +88,6 @@ function animate() {
     if (loadedModel) {
         loadedModel.scene.rotation.y = -document.documentElement.scrollTop / 1000 + 0.6
         plane.rotation.z = -document.documentElement.scrollTop / 1000 + 0.6
-
     };
 }
 
