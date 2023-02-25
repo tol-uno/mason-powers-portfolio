@@ -8,6 +8,10 @@ OLD COLORS
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #110f0d;
     height: 4000px;
@@ -31,6 +35,7 @@ h1 {
 
 h2 {
     font-family: 'DM Sans',  Helvetica,  sans-serif;
+    font-weight: 700;
     color: #110f0d;
     margin: 0;
     margin-top: 2%;
@@ -38,6 +43,14 @@ h2 {
     padding: 0;
     margin: 0;
     
+}
+
+p {
+    margin-top: 2%;
+    font-family: 'DM Sans',  Helvetica,  sans-serif;
+    font-weight: 400;
+    font-size: 4vw;
+    color: #110f0d;
 }
 
 .white-bg-section {
@@ -57,8 +70,7 @@ h2 {
 }
 
 hr {
-    /* width: 80%;  */
-    margin-top: 15%;
+    margin-top: 18%;
     height: 1.5vw;
     background: #110f0d;
     transition: all 0.15s ease-in-out;
@@ -105,7 +117,7 @@ hr.floater.inview {
     border: 0.7vw solid #110f0d;
 }
 
-.menu-item:active {
+.menu-item:hover:active {
     color: #FFFFFF;
     background-color: #110f0d;
 }
@@ -122,7 +134,6 @@ hr.floater.inview {
 
     /* border: 1px solid gray; */
     transition: 0.15s all ease-out;
-    /* box-shadow: 5px 5px 25px 0px rgba(4, 4, 16, 0.7),  -5px -5px 20px 0px rgba(136, 136, 204, 0.5); */
 }
 
 .floater.left {
@@ -150,4 +161,63 @@ canvas {
     position: absolute;
     top: 0;
     left: 0;
+}
+
+@media only screen and (min-width: 600px) { /* Tablet Styling */
+
+  }
+
+
+@media only screen and (min-width: 768px) { /* Desktop Styling */
+    
+    .textbox {
+        width: 50%;
+        margin-top: 10%;
+    }
+
+    h1 {
+        font-size: 5vw;
+        color: #110f0d;
+    }
+
+    .white-bg-section {
+        margin-top: -33%;
+        padding-top: 33%;
+    }
+
+    #model {
+        width: 60%;
+        height: 50%;
+        left: 40%;
+        top: 20vh;
+    }
+
+    .navbar {
+        width: 45%;
+        height: 10%;
+
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+
+    }
+
+    .menu-item {
+        margin: 1vw;
+    
+        font-size: 2vw;
+        border: 0.2vw solid #110f0d;
+    }
+
+    .floater:not(hr) {
+        display: grid;
+        position: relative;
+        margin-top: 10vh;
+        padding-left: 3%;
+        width: 70%;
+        border-left: 1vw solid black;
+    
+        transition: 0.15s all ease-out;
+    }
 }
