@@ -15,7 +15,7 @@ function init() {
     // GLTF LOADER
     var model;
     const gltfLoader = new GLTFLoader();
-    gltfLoader.load("assets/models/HurricanSTO_v1.glb", function (glbModel){
+    gltfLoader.load("assets/models/Aventador-SVJ.glb", function (glbModel){
         loadedModel = glbModel;
         glbModel.scene.scale.set(1.0,1.0,1.0);
         glbModel.scene.position.z = 0;
@@ -63,14 +63,14 @@ function init() {
     }
 
 
-    // PLANE
-    plane = new THREE.Mesh(new THREE.PlaneGeometry(2.3, 5), new THREE.MeshPhongMaterial({color: "#010101"}));
-    plane.rotation.x = -(Math.PI / 2);
-    plane.rotation.z = 0.7
-    plane.position.x = 0;
-    plane.position.y = 0;
-    plane.position.z = 0;
-    scene.add(plane);
+    // OLD SHADOW PLANE
+    // plane = new THREE.Mesh(new THREE.PlaneGeometry(2.3, 5), new THREE.MeshPhongMaterial({color: "#010101"}));
+    // plane.rotation.x = -(Math.PI / 2);
+    // plane.rotation.z = 0.7
+    // plane.position.x = 0;
+    // plane.position.y = 0;
+    // plane.position.z = 0;
+    // scene.add(plane);
 
 
     // plane = new THREE.Mesh(new THREE.PlaneGeometry(1, 1, 1), new THREE.MeshPhongMaterial({color: "#010101"}));
@@ -87,7 +87,7 @@ function animate() {
     renderer.render(scene, camera);
     if (loadedModel) {
         loadedModel.scene.rotation.y = -document.documentElement.scrollTop / 1000 + 0.6
-        plane.rotation.z = -document.documentElement.scrollTop / 1000 + 0.6
+        // plane.rotation.z = -document.documentElement.scrollTop / 1000 + 0.6
     };
 }
 
