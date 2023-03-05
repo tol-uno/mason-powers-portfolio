@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { GLTFLoader } from "GLTFLoader";
+import { RGBELoader } from "RGBELoader"; 
 
 let scene, camera, renderer, cube, plane, loadedModel, modelWindow;
 
@@ -15,7 +16,7 @@ function init() {
     // GLTF LOADER
     var model;
     const gltfLoader = new GLTFLoader();
-    gltfLoader.load("assets/models/Aventador-SVJ.glb", function (glbModel){
+    gltfLoader.load("assets/models/Aventador-SVJ_v2.glb", function (glbModel){
         loadedModel = glbModel;
         glbModel.scene.scale.set(1.0,1.0,1.0);
         glbModel.scene.position.z = 0;
@@ -30,6 +31,9 @@ function init() {
     // RENDERER
     renderer = new THREE.WebGLRenderer({alpha: true, antialias: true});
     renderer.setSize(modelWindow.offsetWidth, modelWindow.offsetHeight);
+    renderer.outputEncoding = THREE.sRGBEncoding; // For making HDRI the correct Gamma
+    renderer.toneMapping = THREE.ACESFilmicToneMapping; // tone mapping
+    renderer.toneMappingExposure = 1.2;
     modelWindow.appendChild(renderer.domElement);
     
     // CAMERA
@@ -42,15 +46,26 @@ function init() {
     camera.position.z = 13;
     camera.position.y = .8;
   
+    //HDRI
+    const hdriTexture = "assets/images/autoshop_01_1k.hdr"
+
+    const HDRILoader = new RGBELoader();
+    HDRILoader.load(hdriTexture, function(texture) {
+        texture.mapping = THREE.EquirectangularReflectionMapping;
+        // scene.background = texture;
+        scene.environment = texture;
+    })
+
+
     //LIGHTS
     var light_height = 2;
     var light_intensity = 1.5;
 
-    createLight(0xffffff, light_intensity, -8, light_height, -8);
-    createLight(0xffffff, light_intensity, -8, light_height, 8);
-    createLight(0xffffff, light_intensity, 8, light_height, -8);
-    createLight(0xffffff, light_intensity, 8, light_height, 8);
-    createLight(0xffffff, 5, 0, 8, 0);
+    // createLight(0xffffff, light_intensity, -8, light_height, -8);
+    // createLight(0xffffff, light_intensity, -8, light_height, 8);
+    // createLight(0xffffff, light_intensity, 8, light_height, -8);
+    // createLight(0xffffff, light_intensity, 8, light_height, 8);
+    // createLight(0xffffff, 5, 0, 8, 0);
 
 
     // const ambLight = new THREE.AmbientLight(0xffffff, 2); // ambient light. only works on textures. can be used for baked raytracing textures.
