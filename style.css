@@ -184,7 +184,7 @@ hr.floater.inview {
     
     .textbox {
         width: 50%;
-        margin: 30vh 0 0 1vw;
+        margin: 30vh 0 0 0;
     }
 
     h1 {
@@ -200,31 +200,32 @@ hr.floater.inview {
     }
 
     #model {
-        width: 60%;
-        height: 50%;
+        width: 60vw;
+        /* height: 50%; */
+        height: 40vw;
         left: 40%;
-        top: 20vh;
+        top: 15vh;
     }
 
     .navbar {
         padding: 0;
-        margin: 1.5vw 0 0 0;
+        margin: 0;
         width: 60%;
-        height: 10%;
-
+        height: 10vh;
         top: 0;
         left: 50%;
         transform: translateX(-50%);
     }
 
     .menu-item {
-        margin: 1vw;
+        margin: 2vh 0 0 0;
+        padding: 0 0 0 0 0;
 
         color: #FFFFFF;
     
-        font-size: 2vw;
+        font-size: 3vh;
         text-decoration: underline;
-        text-underline-offset: 0.5vw;
+        text-underline-offset: 0.5vh;
 
         border: none;
     }

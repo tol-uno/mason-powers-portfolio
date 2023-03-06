@@ -16,7 +16,7 @@ function init() {
     // GLTF LOADER
     var model;
     const gltfLoader = new GLTFLoader();
-    gltfLoader.load("assets_folder/models/Aventador-SVJ_v2.glb", function (glbModel){
+    gltfLoader.load("assets/models/Aventador-SVJ_v2.glb", function (glbModel){
         loadedModel = glbModel;
         glbModel.scene.scale.set(1.0,1.0,1.0);
         glbModel.scene.position.z = 0;
@@ -47,7 +47,7 @@ function init() {
     camera.position.y = .8;
   
     //HDRI
-    const hdriTexture = "assets_folder/images/autoshop_01_1k.hdr"
+    const hdriTexture = "assets/images/autoshop_01_1k.hdr"
 
     const HDRILoader = new RGBELoader();
     HDRILoader.load(hdriTexture, function(texture) {
