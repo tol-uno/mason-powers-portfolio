@@ -32,8 +32,9 @@ function init() {
     renderer = new THREE.WebGLRenderer({alpha: true, antialias: true});
     renderer.setSize(modelWindow.offsetWidth, modelWindow.offsetHeight);
     renderer.outputEncoding = THREE.sRGBEncoding; // For making HDRI the correct Gamma
+    renderer.setPixelRatio(window.devicePixelRatio);
     renderer.toneMapping = THREE.ACESFilmicToneMapping; // tone mapping
-    renderer.toneMappingExposure = 1.2;
+    renderer.toneMappingExposure = 1.5;
     modelWindow.appendChild(renderer.domElement);
     
     // CAMERA
@@ -129,7 +130,7 @@ function reveal() { // for floaters to animate in
     }
 }
 
-document.addEventListener("scroll", reveal);
+window.addEventListener("scroll", reveal);
 
 reveal(); // to check scroll position on page (re)load
 
