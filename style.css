@@ -185,7 +185,7 @@ hr.floater.inview {
 }
 
 
-@media only screen and (min-width: 768px) { /* Desktop Styling */
+@media only screen and (min-width: 600px) { /* was 768px Desktop Styling */
     
     .textbox {
         width: 50%;
