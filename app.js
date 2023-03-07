@@ -89,12 +89,6 @@ function init() {
     // scene.add(plane);
 
 
-    // plane = new THREE.Mesh(new THREE.PlaneGeometry(1, 1, 1), new THREE.MeshPhongMaterial({color: "#010101"}));
-    // plane.position.x = -8;
-    // plane.position.y = 2;
-    // plane.position.z = -8;
-    // scene.add(plane);
-
 } // END OF init()
 
 
