@@ -1,0 +1,65 @@
+body {
+    position: absolute;
+    height: auto;
+}
+
+.white-bg-section {
+    height: 100%;
+    top: 25vh;
+}
+
+h1 {
+    margin-bottom: 14vh;
+    font-size: 15vw;
+    margin-top: 8vh;
+}
+
+.navbar {
+    /* background-color: #110f0d; */
+    /* background-color: #FFFFFF; */
+
+    background-image: linear-gradient(#110f0d00 0%, #110f0d90 80%);
+    /* border-radius: 0 5vw 0 0; */
+    margin-bottom: 0;
+    /* padding-top: 10vh; */
+}
+
+.menu-item {
+
+    /* color: #FFFFFF; */
+    background-color: #FFFFFF;
+
+    box-shadow: 0 0 4vw 0.3vw #110f0d20;
+    border: 0.7vw solid #110f0d;
+}
+
+.gallery-video {
+    border: none;
+}
+
+.portrait {
+    height: calc(90vw * 16/9);
+}
+
+.landscape {
+    height: calc(90vw * 9/16);
+}
+
+
+img, .gallery-video {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    margin: 3vh 0 0 0;
+    border-radius: 2.5vw;
+    box-shadow: 0px 0px 5vw 0vw rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (min-width: 600px) { /* Tablet Styling */
+
+}
+
+@media only screen and (min-width: 600px) { /* was 768px Desktop Styling */
+    
+}

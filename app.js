@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from "GLTFLoader";
 import { RGBELoader } from "RGBELoader"; 
 
-let scene, camera, renderer, cube, plane, loadedModel, modelWindow;
+let scene, camera, renderer, plane, loadedModel, modelWindow;
 
 init();
 animate();
@@ -41,8 +41,8 @@ function init() {
     camera = new THREE.PerspectiveCamera(
         20, 
         modelWindow.offsetWidth / modelWindow.offsetHeight,
-        0.1, 
-        1000,
+        5, //near clip plane
+        20, //far clip plane
     );
     camera.position.z = 13;
     camera.position.y = .8;
@@ -59,8 +59,8 @@ function init() {
 
 
     //LIGHTS
-    var light_height = 2;
-    var light_intensity = 1.5;
+    // var light_height = 2;
+    // var light_intensity = 1.5;
 
     // createLight(0xffffff, light_intensity, -8, light_height, -8);
     // createLight(0xffffff, light_intensity, -8, light_height, 8);
@@ -68,15 +68,14 @@ function init() {
     // createLight(0xffffff, light_intensity, 8, light_height, 8);
     // createLight(0xffffff, 5, 0, 8, 0);
 
-
     // const ambLight = new THREE.AmbientLight(0xffffff, 2); // ambient light. only works on textures. can be used for baked raytracing textures.
     // scene.add(ambLight);
 
-    function createLight(color, intensity, x, y, z) {
-        const light = new THREE.DirectionalLight(color, intensity);
-        light.position.set( x, y, z);
-        scene.add(light);
-    }
+    // function createLight(color, intensity, x, y, z) {
+    //     const light = new THREE.DirectionalLight(color, intensity);
+    //     light.position.set( x, y, z);
+    //     scene.add(light);
+    // }
 
 
     // OLD SHADOW PLANE
@@ -128,38 +127,3 @@ window.addEventListener("scroll", reveal);
 
 reveal(); // to check scroll position on page (re)load
 
-
-
-
-// function init() {
-// const modelWindow = document.getElementById("model");
-// const scene = new THREE.Scene();
-// const camera = new THREE.PerspectiveCamera(
-//     40, // FOV
-//     modelWindow.offsetWidth / modelWindow.offsetHeight, // DIMENSIONS
-//     0.1, // NEAR PLANE
-//     1000 // FAR PLANE
-//     );
-// camera.position.z = 1.6;
-
-// const renderer = new THREE.WebGLRenderer({alpha: true, antialias: true});
-// renderer.setSize(modelWindow.offsetWidth, modelWindow.offsetHeight);
-// modelWindow.appendChild(renderer.domElement);
-
-// // KNOT
-// const material = new THREE.MeshBasicMaterial({color: 0xFFFFFF, wireframe: true});
-// const geometryKnot = new THREE.TorusKnotGeometry( .3, 0.1, 64, 8 );
-// const torusKnot = new THREE.Mesh( geometryKnot, material );
-// scene.add( torusKnot );
-
-
-// function animate() {
-//     requestAnimationFrame(animate);
-//     renderer.render(scene, camera);
-
-//     torusKnot.rotation.y = document.documentElement.scrollTop / 500
-
-// }
-
-// animate();
-// }
