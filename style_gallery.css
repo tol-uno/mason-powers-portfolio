@@ -1,40 +1,43 @@
 body {
-    position: absolute;
-    height: auto;
+    background-image: linear-gradient(30deg, #511538 92%, #001b40 100%); 
+}
+
+#scroll-clip {
+    height: 8000px;
 }
 
 .white-bg-section {
-    height: 100%;
-    top: 25vh;
+    top: 19vh;
+    border-radius: 2.5vw 2.5vw 0 0;
+}
+
+.textbox {
+    margin-top: 5vh;
 }
 
 h1 {
-    margin-bottom: 14vh;
+    margin: 0 0 0 0;
     font-size: 15vw;
-    margin-top: 8vh;
 }
 
-.navbar {
-    /* background-color: #110f0d; */
-    /* background-color: #FFFFFF; */
-
-    background-image: linear-gradient(#110f0d00 0%, #110f0d90 80%);
-    /* border-radius: 0 5vw 0 0; */
-    margin-bottom: 0;
-    /* padding-top: 10vh; */
+h2 {
+    color: #ffffffb5;
+    font-weight: 400;
+    font-size: 3vw;
+    text-align: center;
 }
 
-.menu-item {
-
-    /* color: #FFFFFF; */
-    background-color: #FFFFFF;
-
-    box-shadow: 0 0 4vw 0.3vw #110f0d20;
-    border: 0.7vw solid #110f0d;
-}
-
-.gallery-video {
-    border: none;
+p {
+    /* text-decoration: underline; */
+    /* text-underline-offset: 0.2vh; */
+    text-align: center;
+    font-weight: 300;
+    font-size: 3vw;
+    margin: 0.7vh 7vw 2vh 7vw;
+    padding: 0 0 0 0vw;
+    /* color: #53396c; */
+    color: #c6c6c6;
+    /* border-left: 0.6vw solid #78618d; */
 }
 
 .portrait {
@@ -45,21 +48,59 @@ h1 {
     height: calc(90vw * 9/16);
 }
 
-
-img, .gallery-video {
+.gallery-item {
     position: relative;
+
     left: 50%;
+
     transform: translateX(-50%);
     width: 90vw;
-    margin: 3vh 0 0 0;
+    margin: 2vh 0 0 0;
     border-radius: 2.5vw;
-    box-shadow: 0px 0px 5vw 0vw rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 6vw 0vw rgba(0, 0, 0, 0.25);
+    border: none;
+    /* transition: 0.15s all ease-out; */
 }
 
-@media only screen and (min-width: 600px) { /* Tablet Styling */
+.navbar {
+    box-shadow: 0 0 1.5vw 0 #ffffff24;
+}
 
+.menu-item {
+    font-weight: 700;
+    /* text-decoration: underline; */
+    /* text-decoration-thickness: 0.3vw; */
+}
+
+.shadow {
+    position: fixed;
+    /* https://non-boring-gradients.netlify.app/ */
+    background-image:linear-gradient(0deg, rgb(100% 100% 100%) 0%, rgb(100% 100% 100% / 0.87890625) 6.25%, rgb(100% 100% 100% / 0.765625) 12.5%, rgb(100% 100% 100% / 0.66015625) 18.75%, rgb(100% 100% 100% / 0.5625) 25%, rgb(100% 100% 100% / 0.47265625) 31.25%, rgb(100% 100% 100% / 0.390625) 37.5%, rgb(100% 100% 100% / 0.31640625) 43.75%, rgb(100% 100% 100% / 0.25) 50%, rgb(100% 100% 100% / 0.19140625) 56.25%, rgb(100% 100% 100% / 0.140625) 62.5%, rgb(100% 100% 100% / 0.09765625) 68.75%, rgb(100% 100% 100% / 0.0625) 75%, rgb(100% 100% 100% / 0.03515625) 81.25%, rgb(100% 100% 100% / 0.015625) 87.5%, rgb(100% 100% 100% / 0.00390625) 93.75%, rgb(100% 100% 100% / 0) 100% );
+    width: 100%;
+    height: 12vh;
+    bottom: 0;
+
+}
+
+/* .gallery-item.left {
+    left: -50%;
+}
+
+.gallery-item.right {
+    left: 150%;
+}
+
+.gallery-item.inview {
+    left: 50%;
+} */
+
+@media only screen and (min-width: 600px) { /* Tablet Styling */
 }
 
 @media only screen and (min-width: 600px) { /* was 768px Desktop Styling */
-    
+
+.white-bg-section {
+    top: 0;
+}
+
 }

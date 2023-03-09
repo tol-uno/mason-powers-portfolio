@@ -12,7 +12,9 @@
         <link rel="stylesheet" type="text/css" href="style_gallery.css" />
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM Sans:400,700">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rokkitt:100,300">
 
+		
 		<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
 		<script type="importmap">
 			{
@@ -23,31 +25,64 @@
 				}
 			}
 		</script>
-		<!-- <script type="module" src="app.js"></script> -->
+
+		<script>
+			function reveal() { // for floaters to animate in
+			var floaters = document.querySelectorAll(".gallery-item")
+			var scrollInAt = (window.innerHeight * 0.85); // float = the percentage down page that the element should come in at
+		
+			for (var i = 0; i < floaters.length; i++) {
+				var elementBot = floaters[i].getBoundingClientRect().bottom;
+		
+				if (elementBot < scrollInAt) {
+					floaters[i].classList.add("inview");
+				} else {
+					floaters[i].classList.remove("inview");
+				}
+			}
+			}
+			window.addEventListener("scroll", reveal);
+			reveal();
+		</script>
 	</head>
 	
 	<body id="body">
-		<!-- <div id="scroll-clip"> -->
+		<div id="scroll-clip">
 			<div class="white-bg-section"></div>
 			<div class="textbox" id="textbox">
 				<h1>Gallery</h1>
+				<h2>No Flash Photography!</h2>
 			</div>
-			<img src="assets/images/Mason_Powers_C8_Z06.jpg" alt="Corvette C8 Z06 In A Fall Garden Render">
-			<img src="assets/images/Mason_Powers_C8_Z06_BTS.jpg" alt="Corvette C8 Z06 In A Fall Garden Clay Render Material Overide">
-			<iframe class="gallery-video landscape" src="https://www.youtube.com/embed/vU2Qjg7E12c?autoplay=0&mute=0&loop=1&modestbranding=1"></iframe>
-			<img src="assets/images/Mason_Powers_Porsche_GT3_Airflow_Render.jpg" alt="Green Porsche 911 GT3 Render With Airflow Banner">
-			<img src="assets/images/Mason_Powes_Porsche_Wing_Render.jpg" alt="Yellow Porsche 911 GT3 Render Banner">
-			<img src="assets/images/Mason_Powers_VR_Headset.jpg" alt="VR Headset Floating Above Table">
-			<iframe class="gallery-video landscape" src="https://www.youtube.com/embed/hdk5XY2Qk9w?autoplay=0&mute=0&loop=1&modestbranding=1"></iframe>
-			<iframe class="gallery-video portrait" src="https://www.youtube.com/embed/ElEQ9QfnQZU?autoplay=0&mute=0&loop=1&modestbranding=1"></iframe>
-			<img src="assets/images/Mason_Powers_Porsche_911_GT3_Wing_Riser_Render.jpg" alt="Green Porsche 911 GT3 Wing Riser Render Dramatic Lighting">
+
+			<img 	class="gallery-item left" src="assets/images/Mason_Powers_C8_Z06.jpg" alt="Corvette C8 Z06 In A Fall Garden Render">
+			<img 	class="gallery-item right" src="assets/images/Mason_Powers_C8_Z06_BTS.jpg" alt="Corvette C8 Z06 In A Fall Garden Clay Render Material Overide">
+			<p>Material Shader Development, 3D Environment Design, Lighting Setup, Rendering, Compositing, Color Grading</p>
+			
+			<img 	class="gallery-item left" src="assets/images/Mason_Powes_Porsche_Wing_Render.jpg" alt="Yellow Porsche 911 GT3 Render Banner">
+			<img 	class="gallery-item left" src="assets/images/Mason_Powers_Porsche_GT3_Airflow_Render.jpg" alt="Green Porsche 911 GT3 Render With Airflow Banner">
+			<p>Web Banners - 3D Modeling, Material Shader Development, 3D Environment Design, Lighting Setup, Rendering, Compositing, Color Grading</p>
+			
+			<img	class="gallery-item right" src="assets/images/Mason_Powers_VR_Headset.jpg" alt="VR Headset Floating Above Table Render">
+			<iframe class="gallery-item right landscape" src="https://www.youtube.com/embed/vU2Qjg7E12c?autoplay=0&mute=0&loop=1&modestbranding=1"></iframe>
+			<p>3D Modeling, Animation, Material Shader Development, 3D Environment Design, Compositing, Video Editing</p>
+			
+			<iframe class="gallery-item left landscape" src="https://www.youtube.com/embed/hdk5XY2Qk9w?autoplay=0&mute=0&loop=1&modestbranding=1"></iframe>
+			<p>3D Modeling, Animation, Material Shader Development, Sound Design, Lighting Setup, Compositing, Video Editing</p>
+			
+			<iframe class="gallery-item right portrait" src="https://www.youtube.com/embed/ElEQ9QfnQZU?autoplay=0&mute=0&loop=1&modestbranding=1"></iframe>
+			<img 	class="gallery-item left" src="assets/images/Mason_Powers_Egg_Seltzer.jpg" alt="Fried Egg Flavored Polar Seltzer Can Render">
+			<img 	class="gallery-item left" src="assets/images/Mason_Powers_Apple_Car.jpg" alt="Apple Car Project Titan Concept Render Buckle Up">
+			<img 	class="gallery-item right" src="assets/images/Mason_Powers_Porsche_911_GT3_Wing_Riser_Render.jpg" alt="Green Porsche 911 GT3 Wing Riser Render Dramatic Lighting">
+			<img 	class="gallery-item right" src="assets/images/Mason_Powers_Renault_5_Turbo.jpg" alt="Red Renault 5 Turbo Dramatic Lighting Render">
 			
 		<div class="navbar">
 			<a class ="menu-item" href="index.html">home</a>
 			<a class ="menu-item" href="#top">gallery</a>
+			<a class ="menu-item" href="services.html">services</a>
 			<a class ="menu-item" href="contact.html">contact</a>
 		</div>
-		<!-- </div> -->
+		<div class="shadow"></div>
+		</div>
 	</body>
 </html>
 
@@ -57,6 +92,15 @@
 []===== TODO =====[]
 
 Add Images:
+	White Porsche "Masons Portfolio" (need to be smaller)
+	Virtical Corvette in warehouse (smaller)
+	Lego Transformer (smaller GIF or looping video?)
+	Girl in purple gt3 (smaller)
+	Recolored ATLAS Bars (Color Grade)
+	Add more camera shake to Fabspeed Zoom Under
 
+	The other stuff from old gallery too
+
+Add Slight Paralax on Images while scrolling.
 
 -->
