@@ -12,6 +12,9 @@ body {
 }
 
 .textbox {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
     margin-top: 5vh;
 }
 
@@ -52,25 +55,20 @@ p {
     position: relative;
 
     left: 50%;
-
     transform: translateX(-50%);
-    width: 90vw;
+    
+    /* width: 90vw; was fucking it all up*/
+    max-width: 90vw;
     margin: 2vh 0 0 0;
     border-radius: 2.5vw;
     box-shadow: 0px 0px 6vw 0vw rgba(0, 0, 0, 0.25);
     border: none;
-    /* transition: 0.15s all ease-out; */
 }
 
 .navbar {
     box-shadow: 0 0 1.5vw 0 #ffffff24;
 }
 
-.menu-item {
-    font-weight: 700;
-    /* text-decoration: underline; */
-    /* text-decoration-thickness: 0.3vw; */
-}
 
 .shadow {
     position: fixed;
@@ -82,25 +80,81 @@ p {
 
 }
 
-/* .gallery-item.left {
-    left: -50%;
-}
-
-.gallery-item.right {
-    left: 150%;
-}
-
-.gallery-item.inview {
-    left: 50%;
-} */
-
 @media only screen and (min-width: 600px) { /* Tablet Styling */
 }
 
-@media only screen and (min-width: 600px) { /* was 768px Desktop Styling */
+@media only screen and (min-width: 600px) { /* was: (768px Desktop Styling) */
+
+#scroll-clip {
+    height: 15000px;
+}
 
 .white-bg-section {
     top: 0;
+}
+
+.textbox {
+    margin-top: 8vh;
+}
+
+h1 {
+    font-size: 10vw;
+}
+
+h2 {
+    color: black;
+    font-size: 2vw;
+}
+
+
+p {
+    font-size: 1.3vw;
+    margin: 0.5vh 20vw 3vh 20vw;
+}
+
+figure {
+    /* position: relative; */
+    /* overflow: scroll; */
+    /* display: table; */
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    /* margin: 0 5vw 0 5vw; */
+    /* width: auto; */
+    /* max-height: 60vh; */
+    /* max-width: 80vw; */
+    /* min-height: 50vh; */
+    /* min-width: 50vw; */
+    /* height: 50vh; */
+    /* width: 50vw; */
+    margin: 0;
+    padding:0;
+}
+
+
+.portrait {
+    height: calc(90vw * 16/9);
+}
+
+.landscape {
+    /* height: calc(90vw * 9/16); */
+    width: 70vw;
+}
+
+.gallery-item {
+    /* display: inline-block; */
+    /* object-fit: contain; */
+    margin: 2vh 0 0 0;
+    /* height: 100%; */
+    /* width: 100%; */
+    /* margin: 2vh 0 0 0; */
+    max-width: 70vw;
+    max-height: 80vh;
+    border-radius: 2.5vw;
+    box-shadow: 0px 0px 6vw 0vw rgba(0, 0, 0, 0.25);
+}
+
+.shadow {
+    opacity: 0;
 }
 
 }

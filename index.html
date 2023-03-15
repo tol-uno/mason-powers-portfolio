@@ -30,13 +30,41 @@
 			<div class="white-bg-section"></div>
 			<div class="textbox" id="textbox">
 				<h1>Hey Hey, I'm<br> Mason Powers.<br> I Create 3D Shit</h1>
-				<!-- <h1>Hey Hey, I'm<br> Mason Powers.<br> I'm All Things 3D</h1> -->
+				<!-- <h1>Hey Hey, I'm<br> Mason Powers.<br> I Do Everything 3D</h1> -->
 			</div>
 			<div id="model"></div>
 			<div class="spacer"></div>
+
+			<svg class="scroll-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+			    <polyline points="0,50 50,100 100,50" fill="none" stroke-width="10%" stroke="#001b40">
+				
+					<animate
+						attributeName="points"
+						dur="1.5s"
+						values="
+						0,0 50,0 100,0; 		
+						0,50 50,100 100,50;  	
+						0,100 50,100 100,100; 							
+						0,0 50,0 100,0; 		
+						"
+
+						keySplines="
+						0.1 0.8 0.2 1;
+						0.2 0.2 0.8 0.8;
+						0.1 0.8 0.2 1;"
+						keyTimes="
+						0;0.5;0.85;1;"
+						calcMode="linear"
+
+						repeatCount="indefinite"
+					/>
+
+				</polyline>
+			</svg>
+						  
 			<div class="floater left">
 				<h2>I Do 3D Visualization</h2>
-				<p>I make products pretty. Photorealistic renders and animations for ecommercea and marketing... or just to look at.</p>
+				<p>I make products pretty. Photorealistic renders and animations for ecommerce and marketing... or just to look at.</p>
 			</div>
 			<div class="floater right">
 				<h2>Product Design Background</h2>
@@ -72,37 +100,40 @@
 []===== TODO =====[]
 
 FIXES:
-Slight extra horizonal room. some element has 100vw
-extend body on home page for full car rotation
-white appearing on overscroll
+horizontal scroll still a problem 
+extend body on home page for full car rotation in desktop mode
+nav bar is bold/unbold on different pages
+
+NAV BAR: 
+add semantic <nav>
+Gradient moves to mouse hovered item
 
 CAR MODEL CHANGES
+	Windows still do some transparency wierdness
 	AO export
 		Soft Shadow
 	Finalize car color
 	#7c7bff
 	Wheel wells are highlight color
 
-Home Page Text
-	Main H1 text
-		Hey hey Im Mason Powers. I create ____
-		Hey Hey I'm Mason Powers. I Do Everything 3D.
-	Spell check all floaters' text
+Contact page:
+	headshot
+	more fun images of myself
+	contacts etc.
 
-Link buttons to pages
-	Contact page with headshot, more fun images of myself, contacts etc.
-
-Desktop View
-	Better look to floaters
-
-Tablet View
-	Bigger Navbar
-
-Services Tab:
+Services Page:
 	Hosting 3D Media
 	Product Renders
 	Animations
 	3D Modeling
 	Web Design
+
+Desktop View
+	design gallery page
+	Better look to floaters
+
+Tablet View
+	Bigger Navbar
+
 
 -->
