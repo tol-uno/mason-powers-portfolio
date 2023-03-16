@@ -3,7 +3,7 @@ body {
 }
 
 #scroll-clip {
-    height: 8000px;
+    height: fit-content;
 }
 
 .white-bg-section {
@@ -31,8 +31,6 @@ h2 {
 }
 
 p {
-    /* text-decoration: underline; */
-    /* text-underline-offset: 0.2vh; */
     text-align: center;
     font-weight: 300;
     font-size: 3vw;
@@ -45,10 +43,12 @@ p {
 
 .portrait {
     height: calc(90vw * 16/9);
+    width: 90vw;
 }
 
-.landscape {
+.landscape { 
     height: calc(90vw * 9/16);
+    width: 90vw;
 }
 
 .gallery-item {
@@ -57,7 +57,6 @@ p {
     left: 50%;
     transform: translateX(-50%);
     
-    /* width: 90vw; was fucking it all up*/
     max-width: 90vw;
     margin: 2vh 0 0 0;
     border-radius: 2.5vw;
@@ -86,7 +85,6 @@ p {
 @media only screen and (min-width: 600px) { /* was: (768px Desktop Styling) */
 
 #scroll-clip {
-    height: 15000px;
 }
 
 .white-bg-section {
@@ -118,21 +116,17 @@ p {
 }
 
 .portrait {
-    height: calc(90vw * 16/9);
+    width: calc(80vh * 9/16);
+    height: 80vh;
 }
 
 .landscape {
-    /* height: calc(90vw * 9/16); */
     width: 70vw;
+    height: calc(70vw * 9/16);
 }
 
 .gallery-item {
-    /* display: inline-block; */
-    /* object-fit: contain; */
     margin: 2vh 0 0 0;
-    /* height: 100%; */
-    /* width: 100%; */
-    /* margin: 2vh 0 0 0; */
     max-width: 70vw;
     max-height: 80vh;
     border-radius: 2.5vw;

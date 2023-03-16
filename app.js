@@ -78,16 +78,6 @@ function init() {
     // }
 
 
-    // OLD SHADOW PLANE
-    // plane = new THREE.Mesh(new THREE.PlaneGeometry(2.3, 5), new THREE.MeshPhongMaterial({color: "#010101"}));
-    // plane.rotation.x = -(Math.PI / 2);
-    // plane.rotation.z = 0.7
-    // plane.position.x = 0;
-    // plane.position.y = 0;
-    // plane.position.z = 0;
-    // scene.add(plane);
-
-
 } // END OF init()
 
 

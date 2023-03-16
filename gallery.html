@@ -6,7 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<meta name="description" content="Mason Powers Portfolio Site for 3D and Product Design" />
 
-		<title>Mason Powers</title>
+		<title>Mason Powers Gallery</title>
 		<link rel="icon" type="image/x-icon" href="favicon.ico">
         <link rel="stylesheet" type="text/css" href="style.css" />
         <link rel="stylesheet" type="text/css" href="style_gallery.css" />
@@ -24,25 +24,6 @@
 					"RGBELoader": "https://cdn.jsdelivr.net/npm/three@0.145.0/examples/jsm/loaders/RGBELoader.js"
 				}
 			}
-		</script>
-
-		<script>
-			function reveal() { // for floaters to animate in
-			var floaters = document.querySelectorAll(".gallery-item")
-			var scrollInAt = (window.innerHeight * 0.85); // float = the percentage down page that the element should come in at
-		
-			for (var i = 0; i < floaters.length; i++) {
-				var elementBot = floaters[i].getBoundingClientRect().bottom;
-		
-				if (elementBot < scrollInAt) {
-					floaters[i].classList.add("inview");
-				} else {
-					floaters[i].classList.remove("inview");
-				}
-			}
-			}
-			window.addEventListener("scroll", reveal);
-			reveal();
 		</script>
 	</head>
 	
@@ -73,6 +54,9 @@
 			<iframe class="gallery-item left landscape" src="https://www.youtube.com/embed/hdk5XY2Qk9w?autoplay=0&mute=0&loop=1&modestbranding=1"></iframe>
 			<p>Intro/Outro graphic created for social media. Work Showcased: 3D Modeling, Animation, Material Shader Development, Sound Design, Lighting Setup, Compositing, Video Editing</p>
 			
+			<img 	class="gallery-item right" src="assets/images/Mason_Powers_Purple_GT4_RS.jpg" alt="Girl in a Purple Porsche 718 Cayman GT4 RS on the Racetrack">
+			<p>Marketing image created for social media. Work showcased: Material Shader Development, 3D Environment Design, Lighting Setup, Rendering, Compositing, Color Grading</p>
+
 			<iframe class="gallery-item right portrait" src="https://www.youtube.com/embed/ElEQ9QfnQZU?autoplay=0&mute=0&loop=1&modestbranding=1"></iframe>
 			<p>Animation to showcase a new product launch. Work Showcased: Animation, Material Shader Development, Lighting Setup, Compositing, Video Editing</p>
 			
