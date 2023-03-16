@@ -16,7 +16,7 @@ function init() {
     // GLTF LOADER
     var model;
     const gltfLoader = new GLTFLoader();
-    gltfLoader.load("assets/models/Aventador-SVJ_v2.glb", function (glbModel){
+    gltfLoader.load("assets/models/Aventador-SVJ_v3.glb", function (glbModel){
         loadedModel = glbModel;
         glbModel.scene.scale.set(1.0,1.0,1.0);
         glbModel.scene.position.z = 0;
