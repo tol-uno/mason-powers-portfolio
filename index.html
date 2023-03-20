@@ -23,9 +23,19 @@
 			}
 		</script>
 		<script type="module" src="app.js"></script>
+
 	</head>
 	
 	<body id="body">
+		<section id="loading-page">
+			<div id="laoding-icons">
+				<h1 class="loading-text">Loading The Page...</h1>
+				<div class="loading-bar">
+					<div class="loading-bar-fill"></div>
+				</div>
+			</div>
+
+		</section>
 		<div id="scroll-clip">
 			<div class="white-bg-section"></div>
 			<div class="textbox" id="textbox">
@@ -84,13 +94,14 @@
 			</div>
 			<hr class="floater">
 			<div class="spacer" style="height: 300vh;"></div>
+			<div class="navbar">
+				<a class ="menu-item" href="#top">home</a>
+				<a class ="menu-item" href="./gallery">gallery</a>
+				<a class ="menu-item" href="./services">services</a>
+				<a class ="menu-item" href="./contact">contact</a>
+			</div>
 		</div>
-		<div class="navbar">
-			<a class ="menu-item" href="#top">home</a>
-			<a class ="menu-item" href="./gallery">gallery</a>
-			<a class ="menu-item" href="./services">services</a>
-			<a class ="menu-item" href="./contact">contact</a>
-		</div>
+
 		</div>
 	</body>
 </html>
@@ -101,12 +112,14 @@
 []===== TODO =====[]
 
 FIXES:
-horizontal scroll still a problem 
+horizontal scroll still a problem ??
 extend body on home page for full car rotation in desktop mode
 
 NAV BAR: 
 add semantic <nav>
 Gradient moves to mouse hovered item
+
+Loading Screen
 
 CAR MODEL CHANGES
 	Tires have to low specular?

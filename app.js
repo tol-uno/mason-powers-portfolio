@@ -4,6 +4,8 @@ import { RGBELoader } from "RGBELoader";
 
 let scene, camera, renderer, plane, loadedModel, modelWindow;
 
+var loadedMediaCount = 0;
+
 init();
 animate();
 window.addEventListener("resize", onWindowResize, false);
@@ -12,7 +14,7 @@ window.addEventListener("resize", onWindowResize, false);
 function init() {
     //SCENE
     scene = new THREE.Scene();
-    
+
     // GLTF LOADER
     var model;
     const gltfLoader = new GLTFLoader();
@@ -24,7 +26,16 @@ function init() {
         glbModel.scene.position.y = 0;
         glbModel.scene.rotation.set(0, 0.7, 0);
         scene.add(glbModel.scene);
-    })
+        
+        if (loadedMediaCount == 1) {mediaLoaded();} else {loadedMediaCount += 1;}
+    
+    },
+    function (xhr) {
+        var percentageLoaded = xhr.loaded / xhr.total * 100;
+        document.querySelector(".loading-bar-fill").style.width = percentageLoaded + "%";
+
+    }
+    )
 
     modelWindow = document.getElementById("model");
 
@@ -55,27 +66,10 @@ function init() {
         texture.mapping = THREE.EquirectangularReflectionMapping;
         // scene.background = texture;
         scene.environment = texture;
+
+        if (loadedMediaCount == 1) {mediaLoaded();} else {loadedMediaCount += 1;}
+
     })
-
-
-    //LIGHTS
-    // var light_height = 2;
-    // var light_intensity = 1.5;
-
-    // createLight(0xffffff, light_intensity, -8, light_height, -8);
-    // createLight(0xffffff, light_intensity, -8, light_height, 8);
-    // createLight(0xffffff, light_intensity, 8, light_height, -8);
-    // createLight(0xffffff, light_intensity, 8, light_height, 8);
-    // createLight(0xffffff, 5, 0, 8, 0);
-
-    // const ambLight = new THREE.AmbientLight(0xffffff, 2); // ambient light. only works on textures. can be used for baked raytracing textures.
-    // scene.add(ambLight);
-
-    // function createLight(color, intensity, x, y, z) {
-    //     const light = new THREE.DirectionalLight(color, intensity);
-    //     light.position.set( x, y, z);
-    //     scene.add(light);
-    // }
 
 
 } // END OF init()
@@ -95,6 +89,14 @@ function onWindowResize() {
     camera.aspect = modelWindow.offsetWidth / modelWindow.offsetHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(modelWindow.offsetWidth, modelWindow.offsetHeight);
+}
+
+function mediaLoaded() { // REMOVING THE PAGE LOADING SCREEN
+    document.getElementById("loading-page").style.visibility="hidden";
+
+    document.querySelector("body").style.overflow="auto";
+    document.getElementById("scroll-clip").style.visibility="visible";
+
 }
 
 

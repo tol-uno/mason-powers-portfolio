@@ -13,7 +13,38 @@ html {
     /* background-color: black; */
 }
 
+#loading-page {
+    position: absolute;
+    visibility: visible;
+    /* background-color: white; */
+    padding-top: 40%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.loading-bar {
+    margin-top: 5vh;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 3vh;
+    border-radius: 999px;
+    border: 1vw solid white;
+    width: 60%;
+    padding: 0.5vh;
+}
+
+.loading-bar-fill {
+    border-radius: 999px;
+    background-color: white;
+    height: 100%;
+    width: 0%
+}
+
 #scroll-clip {
+    visibility: hidden;
     position: relative;
     top: 0;
     left: 0;
@@ -26,8 +57,8 @@ html {
 
 body {
     background: #001b40;
-    background-image: linear-gradient(30deg, #511538 85%, #001b40 100%); 
-    height: auto;
+    background-image: linear-gradient(30deg, #511538 60%, #001b40 100%); 
+    overflow: hidden;
     margin: 0;
 }
 
@@ -96,9 +127,6 @@ p {
     color: #110f0d;
 }
 
-.spacer {
-    /* height: 8vh; */
-}
 
 .scroll-icon {
     position: fixed;
@@ -199,7 +227,31 @@ hr.floater.inview {
 
 
 @media only screen and (min-width: 600px) { /* was: (768px Desktop Styling) */
-    
+    body {
+        background-image: linear-gradient(30deg, #511538 85%, #001b40 100%); 
+    }
+
+
+    #loading-page {
+        padding-top: 20vh;
+    }
+
+    .loading-text {
+        color: white;
+    }
+
+    .loading-bar {
+        margin-top: 5vh;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 3vh;
+        border-radius: 999px;
+        border: 0.2vw solid white;
+        padding: 0.3vh;        
+        width: 30%;
+    }
+
     .textbox {
         width: 50%;
         margin: 30vh 0 0 0;
