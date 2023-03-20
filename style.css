@@ -241,14 +241,9 @@ hr.floater.inview {
     }
 
     .loading-bar {
-        margin-top: 5vh;
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        height: 3vh;
-        border-radius: 999px;
+        height: 2.5vh;
         border: 0.2vw solid white;
-        padding: 0.3vh;        
+        padding: 0.3vh;
         width: 30%;
     }
 
