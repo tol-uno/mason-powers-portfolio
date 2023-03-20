@@ -31,8 +31,7 @@ function init() {
     
     },
     function (xhr) {
-        var percentageLoaded = Math.round(xhr.loaded / xhr.total * 100);
-        console.log(percentageLoaded + "%");
+        var percentageLoaded = Math.round(xhr.loaded / 3830176 * 100); //xhr.total isnt read when published. Hardcoded bytes
         document.querySelector(".loading-bar-fill").style.width = percentageLoaded + "%";
 
     }
