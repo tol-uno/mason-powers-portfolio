@@ -1,12 +1,12 @@
 body {
-    /*  \/ needed because app.js isnt included in gallery to covert this back from loading page */
+    /*  \/ needed because app.js isnt included in gallery.html to covert this back from loading page */
     overflow: auto;
     background-image: linear-gradient(30deg, #511538 92%, #001b40 100%); 
 }
 
 #scroll-clip {
     visibility: visible;
-    height: fit-content
+    height: fit-content;
 }
 
 .white-bg-section {

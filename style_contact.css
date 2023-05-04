@@ -1,0 +1,96 @@
+body {
+    /*  \/ overflow needed because app.js isnt included in contact.html to covert this back from loading page */
+    overflow: auto;
+    background-image: none;
+    background-color: white;
+}
+
+.textbox {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 5vh;
+}
+
+h1 {
+    margin: 0 0 0 0;
+    font-size: 15vw;
+}
+
+h2 {
+    color: #ffffffb5;
+    font-weight: 400;
+    font-size: 3vw;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    font-weight: 300;
+    font-size: 3vw;
+    margin: 0.7vh 7vw 2vh 7vw;
+    padding: 0 0 0 0vw;
+    /* color: #53396c; */
+    color: #c6c6c6;
+    /* border-left: 0.6vw solid #78618d; */
+}
+
+.contact-photo {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 10vh 0 6vh 0;
+    /* width: 20vw; */
+    height: 40vh;
+    /* border: 1vw solid black; */
+    border-radius: 2.5vh;
+    box-shadow: 0px 0px 6vw 0vw rgba(0, 0, 0, 0.25);
+}
+
+svg {
+display:inline;
+}
+
+a {
+    position: relative;
+    display: inline;
+    font-size: 130%;
+    font-weight: 700;
+    font-family: 'DM Sans', Helvetica, sans-serif;
+    color: black;
+    text-decoration: none;
+    /* text-decoration-thickness: 0.8vw; */
+    margin-left: 2vw;
+}
+
+
+.contact-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.2vh 0 0 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+
+    /* border: 4px solid black; */
+    /* border-radius: 2vw; */
+    padding: 1vw;
+}
+
+.email {
+    margin: 0;
+    /* font-size: 130%; */
+    margin: auto;
+}
+
+
+@media only screen and (min-width: 600px) { /* Tablet Styling */
+}
+
+@media only screen and (min-width: 600px) { /* was: (768px Desktop Styling) */
+    .contact-photo {
+        margin: 18vh 0 6vh 0;
+    }
+}
