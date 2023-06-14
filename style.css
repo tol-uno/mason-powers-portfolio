@@ -179,7 +179,7 @@ hr.floater.inview {
     text-align: center;
     text-decoration: none;
 
-    margin: 3vw 3.5vw 3vw 3.5vw;
+    margin: 3vw 5.5vw 3vw 5.5vw;
 
     font-family: 'DM Sans', Helvetica, sans-serif;
     font-weight: 700;
@@ -291,7 +291,7 @@ hr.floater.inview {
         }
 
     .menu-item {
-        margin: 1vh 3vw 1vh 3vw;
+        margin: 1vh 5vw 1vh 5vw;
         padding: 0 0 0 0 0;
 
         color: #FFFFFF;
