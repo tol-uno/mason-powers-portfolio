@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from "GLTFLoader";
 import { RGBELoader } from "RGBELoader"; 
 
-let scene, camera, renderer, plane, loadedModel, modelWindow;
+let scene, camera, renderer, loadedModel, modelWindow;
 
 var loadedMediaCount = 0;
 
@@ -25,6 +25,15 @@ function init() {
         glbModel.scene.position.x = 0;
         glbModel.scene.position.y = 0;
         glbModel.scene.rotation.set(0, 0.7, 0);
+
+        glbModel.scene.traverse( function(child) { // sorts through all child meshes and enables shadows on them
+            if (child.isMesh) {
+                child.castShadow = true;
+                child.receiveShadow = true;
+                console.log("shadows added");
+            }
+        });
+
         scene.add(glbModel.scene);
         
         if (loadedMediaCount == 1) {mediaLoaded();} else {loadedMediaCount += 1;}
@@ -44,16 +53,18 @@ function init() {
     renderer.setSize(modelWindow.offsetWidth, modelWindow.offsetHeight);
     renderer.outputEncoding = THREE.sRGBEncoding; // For making HDRI the correct Gamma
     renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.toneMapping = THREE.ACESFilmicToneMapping; // tone mapping
-    renderer.toneMappingExposure = 1.5;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping; // Tone mapping
+    // renderer.toneMappingExposure = 1.5;
+    renderer.toneMappingExposure = 1;
+
     modelWindow.appendChild(renderer.domElement);
     
     // CAMERA
     camera = new THREE.PerspectiveCamera(
         20, 
         modelWindow.offsetWidth / modelWindow.offsetHeight,
-        5, //near clip plane
-        20, //far clip plane
+        5, // near clip plane
+        20, // far clip plane
     );
     camera.position.z = 13;
     camera.position.y = .8;
@@ -70,6 +81,19 @@ function init() {
         if (loadedMediaCount == 1) {mediaLoaded();} else {loadedMediaCount += 1;}
 
     })
+
+    const directionalLight = new THREE.DirectionalLight( 0xffffff, 4 );
+    directionalLight.castShadow = true;
+    directionalLight.shadow.camera.top = 4;
+    directionalLight.shadow.camera.bottom = - 4;
+    directionalLight.shadow.camera.left = - 4;
+    directionalLight.shadow.camera.right = 4;
+    directionalLight.shadow.camera.near = 0.1;
+    directionalLight.shadow.camera.far = 40;
+    directionalLight.shadow.bias = - 0.002;
+    directionalLight.position.set( 0, 8, 2 );
+    scene.add( directionalLight );
+    
 
 
 } // END OF init()
