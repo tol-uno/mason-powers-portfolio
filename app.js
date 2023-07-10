@@ -30,7 +30,7 @@ function init() {
             if (child.isMesh) {
                 child.castShadow = true;
                 child.receiveShadow = true;
-                console.log("shadows added");
+                // console.log("shadows added");
             }
         });
 
