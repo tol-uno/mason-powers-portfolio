@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="description" content="Mason Powers Portfolio Site for 3D and Product Design" />
+
+		<title>Mason Powers Portfolio Cesium</title>
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="stylesheet" type="text/css" href="portfolio_cesium.css" />
+		
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM Sans:400,700">
+		<!-- Roboto 100 400-->
+
+		<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+		<script type="importmap">
+			{
+				"imports": {
+					"three": "https://cdn.jsdelivr.net/npm/three@0.145.0/build/three.module.js",
+					"GLTFLoader": "https://cdn.jsdelivr.net/npm/three@0.145.0/examples/jsm/loaders/GLTFLoader.js",
+					"RGBELoader": "https://cdn.jsdelivr.net/npm/three@0.145.0/examples/jsm/loaders/RGBELoader.js"
+				}
+			}
+		</script>
+		<script type="module" src="portfolio_cesium.js"></script>
+
+	</head>
+	
+	<body id="body">
+		<section id="loading-page">
+			<div id="laoding-icons">
+				<h1 class="loading-text">Loading The Page...</h1>
+				<div class="loading-bar">
+					<div class="loading-bar-fill"></div>
+				</div>
+			</div>
+		</section>
+
+
+			<div id="scroll-clip">
+				<div class="white-bg-section"></div>
+
+				<div class="spacer" style="height: 20vh;"></div>
+				
+				<div class="flexbox">
+					<h1>Hey Cesium Team!<br>I'm Mason &#128075</h1>
+					<img class="contact-photo" src="assets/images/Mason_Powers_Contact_Photo.jpg">
+				</div>
+				
+				<div class="flexbox">
+					<h2>I found you guys when looking for companies working on web based 3D in Philly. When I looked into Cesium I got excited because I can also display geospatial data on the web!</h2>
+					<div id="model"></div>
+				</div>
+
+				<div class="spacer" style="height: 8vh;"></div>
+
+				<h2>I Make 3D Renders & Animations</h2>
+				<img 	class="gallery-item left" src="assets/images/Mason_Powers_C8_Z06.jpg" alt="Corvette C8 Z06 In A Fall Garden Render">
+			
+				<img 	class="gallery-item right" src="assets/images/Mason_Powers_C8_Z06_BTS.jpg" alt="Corvette C8 Z06 In A Fall Garden Clay Render Material Overide">
+				<p>Marketing image I created for a client. Work showcased: Material Shader Development, 3D Environment Design, Lighting Setup, Rendering, Compositing, Color Grading</p>
+	
+				<img 	class="gallery-item left" src="assets/images/Mason_Powers_Porsche_Wing_Render.jpg" alt="Yellow Porsche 911 GT3 Render Banner">
+				
+				<img 	class="gallery-item left" src="assets/images/Mason_Powers_Porsche_GT3_Airflow_Render.jpg" alt="Green Porsche 911 GT3 Render With Airflow Banner">
+				<p>Banner images I created for a website homepage. Work showcased: 3D Modeling, Material Shader Development, 3D Environment Design, Lighting Setup, Rendering, Compositing, Color Grading</p>
+				
+				<img	class="gallery-item right" src="assets/images/Mason_Powers_VR_Headset.jpg" alt="VR Headset Floating Above Table Render">
+				<p>VR headset visualization personal project. Work showcased: 3D Modeling, Material Shader Development, Lighting Setup, Color Grading, Post Processing</p>
+				
+				<img 	class="gallery-item right" src="assets/images/Mason_Powers_C8_Corvette_Vertical.jpg" alt="Silver Corvette C8 Z06 In A Warehouse With Caustics Render">
+				<p>Marketing image created for social media. Work showcased: Material Shader Development, 3D Environment Design, Lighting Setup, Rendering, Compositing, Color Grading</p>
+	
+				<iframe class="gallery-item right landscape" src="https://www.youtube.com/embed/vU2Qjg7E12c?autoplay=0&mute=0&loop=1&modestbranding=1"></iframe>
+				<p>Animation created to showcase the VR headset. Work showcased: 3D Modeling, Animation, Material Shader Development, 3D Environment Design, Compositing, Video Editing</p>
+				
+				<iframe class="gallery-item left landscape" src="https://www.youtube.com/embed/hdk5XY2Qk9w?autoplay=0&mute=0&loop=1&modestbranding=1"></iframe>
+				<p>Intro/Outro graphic created for social media. Work Showcased: 3D Modeling, Animation, Material Shader Development, Sound Design, Lighting Setup, Compositing, Video Editing</p>
+				
+				<img 	class="gallery-item right" src="assets/images/Mason_Powers_Purple_GT4_RS.jpg" alt="Girl in a Purple Porsche 718 Cayman GT4 RS on the Racetrack">
+				<p>Marketing image created for social media. Work showcased: Material Shader Development, 3D Environment Design, Lighting Setup, Rendering, Compositing, Color Grading</p>
+	
+				<iframe class="gallery-item right portrait" src="https://www.youtube.com/embed/ElEQ9QfnQZU?autoplay=0&mute=0&loop=1&modestbranding=1"></iframe>
+				<p>Animation to showcase a new product launch. Work Showcased: Animation, Material Shader Development, Lighting Setup, Compositing, Video Editing</p>
+				
+				<img 	class="gallery-item left" src="assets/images/Mason_Powers_Egg_Seltzer.jpg" alt="Fried Egg Flavored Polar Seltzer Can Render">
+				<p>Three times your recommended daily dose of cholesterol. Work Showcased: Packaging Design, 3D Modeling, Material Shader Development, Lighting Setup, Post Processing</p>
+				
+				<img 	class="gallery-item left" src="assets/images/Mason_Powers_Apple_Car.jpg" alt="Apple Car Project Titan Concept Render Buckle Up">
+				<p>Concept rendering of an Apple car. Work showcased: 3D Modeling, Material Shader Development, Lighting Setup, Color Grading, Post Processing</p>
+				
+				<img 	class="gallery-item right" src="assets/images/Mason_Powers_Porsche_911_GT3_Wing_Riser_Render.jpg" alt="Green Porsche 911 GT3 Wing Riser Render Dramatic Lighting">
+				<p>A dramatic tail light... Work showcased: Material Shader Development, Lighting Setup, Rendering, Compositing, Color Grading</p>
+				
+				<img 	class="gallery-item right" src="assets/images/Mason_Powers_Renault_5_Turbo.jpg" alt="Red Renault 5 Turbo Dramatic Lighting Render">
+				<p>An old mediocre render of a fantastic car. Work showcased: 3D Modeling, Material Shader Development, Lighting Setup, Rendering, Compositing, Color Grading</p>
+	
+				<div class="spacer" style="height: 15vh;"></div>
+	
+			</div>
+
+		</div>
+	</body>
+</html>
+
+
+<!-- 
+
+[]===== TODO =====[]
+
+FIXES:
+Better Contact Format
+
+Timeout for loading page
+
+
+Horizontal scroll still a problem idk??
+
+NAV BAR: 
+add semantic <nav>
+Gradient moves to mouse hovered item
+
+LOADING SCREEN:
+	Make funny
+	Nice CSS animation?
+	Game? (would have to work on mobile)
+
+CAR MODEL CHANGES
+	Tires have to low specular?
+	AO export
+		Soft Shadow
+	Finalize car color
+	#7c7bff
+
+Services Page:
+	Hosting 3D Media
+	Product Renders
+	Animations
+	3D Modeling
+	Web Design
+
+Desktop View
+	Better look to floaters
+
+Tablet View
+	Bigger Navbar
+
+Fun 404 page:
+	Looks like this page ran off. Play this game while we look for it.
+-->

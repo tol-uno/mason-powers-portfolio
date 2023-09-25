@@ -88,8 +88,6 @@ p {
 
 @media only screen and (min-width: 600px) { /* was: (768px Desktop Styling) */
 
-#scroll-clip {
-}
 
 .white-bg-section {
     top: 0;
