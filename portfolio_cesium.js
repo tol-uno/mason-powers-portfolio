@@ -18,7 +18,7 @@ function init() {
     // GLTF LOADER
     var model;
     const gltfLoader = new GLTFLoader();
-    gltfLoader.load("assets/models/ChalaadiGlacier.glb", function (glbModel){
+    gltfLoader.load("assets/models/ChalaadiGlacier2.glb", function (glbModel){
         loadedModel = glbModel;
         glbModel.scene.scale.set(1.0,1.0,1.0);
         glbModel.scene.position.z = 0;
@@ -26,13 +26,13 @@ function init() {
         glbModel.scene.position.y = 0;
         glbModel.scene.rotation.set(0, 0, 0);
 
-        glbModel.scene.traverse( function(child) { // sorts through all child meshes and enables shadows on them
-            if (child.isMesh) {
-                child.castShadow = true;
-                child.receiveShadow = true;
-                // console.log("shadows added");
-            }
-        });
+        // glbModel.scene.traverse( function(child) { // sorts through all child meshes and enables shadows on them
+        //     if (child.isMesh) {
+        //         child.castShadow = true;
+        //         child.receiveShadow = true;
+        //         // console.log("shadows added");
+        //     }
+        // });
 
         scene.add(glbModel.scene);
         
@@ -48,7 +48,7 @@ function init() {
 
     modelWindow = document.getElementById("model");
 
-    // RENDERER
+    // RENDERER canvas
     renderer = new THREE.WebGLRenderer({alpha: true, antialias: true});
     renderer.setSize(modelWindow.offsetWidth, modelWindow.offsetHeight);
     renderer.outputEncoding = THREE.sRGBEncoding; // For making HDRI the correct Gamma
@@ -60,13 +60,13 @@ function init() {
     
     // CAMERA
     camera = new THREE.PerspectiveCamera(
-        20,
+        15,
         modelWindow.offsetWidth / modelWindow.offsetHeight,
         600, // near clip plane
         1500, // far clip plane
     );
     camera.position.z = 1000; // towards camera
-    camera.position.y = 400; // up
+    camera.position.y = 375; // up
     camera.rotation.set(-20 * Math.PI / 180, 0, 0)
   
     //HDRI
@@ -92,7 +92,7 @@ function animate() {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
     if (loadedModel) {
-        loadedModel.scene.rotation.y = -document.documentElement.scrollTop / 500 + 1
+        loadedModel.scene.rotation.y = -document.documentElement.scrollTop / 300 + 0.8
         // camera.rotation.set(document.documentElement.scrollTop / 100000 - 30 * Math.PI / 180, 0, 0)
 
         // plane.rotation.z = -document.documentElement.scrollTop / 1000 + 0.6
@@ -113,5 +113,3 @@ function mediaLoaded() { // REMOVING THE PAGE LOADING SCREEN
     document.getElementById("scroll-clip").style.visibility="visible";
 
 }
-
-
