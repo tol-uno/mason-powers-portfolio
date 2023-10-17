@@ -40,7 +40,7 @@ function init() {
     
     },
     function (xhr) {
-        var percentageLoaded = Math.round(xhr.loaded / 3830176 * 100); //xhr.total isnt read when published. Hardcoded bytes
+        var percentageLoaded = Math.round(xhr.loaded / 900000 * 100); //xhr.total isnt read when published. Hardcoded bytes
         document.querySelector(".loading-bar-fill").style.width = percentageLoaded + "%";
 
     }
@@ -92,7 +92,7 @@ function animate() {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
     if (loadedModel) {
-        loadedModel.scene.rotation.y = -document.documentElement.scrollTop / 300 + 0.8
+        loadedModel.scene.rotation.y = -document.documentElement.scrollTop / 300 + 1.3
         // camera.rotation.set(document.documentElement.scrollTop / 100000 - 30 * Math.PI / 180, 0, 0)
 
         // plane.rotation.z = -document.documentElement.scrollTop / 1000 + 0.6
