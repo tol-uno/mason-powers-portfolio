@@ -128,17 +128,6 @@ p {
 }
 
 
-/* 
-.scroll-icon {
-    position: fixed;
-    overflow: visible;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 75vh;
-    width: 5vh;
-} 
-*/
-
 hr {
     margin-top: 18%;
     height: 0.5vh;
