@@ -1,0 +1,91 @@
+body {
+    /* overflow needed because app.js isnt included in contact.html to covert this back from loading page */
+    overflow: auto;
+    font-family: "DM Sans", Helvetica, sans-serif;
+    background-image: none;
+    background-color: white;
+    color: #282828;
+    margin: 0;
+}
+
+h1 {
+    display: none;
+    margin: 0;
+    font-weight: 700;
+    font-size: 12vw;
+    text-align: center;
+}
+
+#contact-container {
+    padding: 4vh 8vw 25vh 8vw;
+    gap: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.contact-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 2.5vh;
+    box-shadow: 0 0 6vw 0 rgba(0, 0, 0, 0.25);
+}
+
+svg {
+    display: inline;
+    scale: 80%;
+}
+
+.contact-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    padding: 1vw;
+}
+
+.contact-button a {
+    position: relative;
+    display: inline;
+    font-size: 4.2vw;
+    font-weight: 700;
+    text-decoration: none;
+    color: #282828;
+}
+
+@media only screen and (min-width: 600px) {
+    h1 {
+        font-size: min(calc((60 / 14.4) * 1vw), 60px);
+        text-shadow: none;
+    }
+
+    #contact-container {
+        flex-direction: row;
+        margin: 18vh 20vw 18vh 20vw;
+        padding: 0;
+    }
+
+    .contact-photo {
+        height: auto;
+        width: min(calc((300 / 14.4) * 1vw), 300px);
+    }
+
+    .contact-button {
+        justify-content: left;
+        margin: 1vw 0 3vh 2vw;
+        width: 100%;
+        padding: 0;
+    }
+
+    svg {
+        scale: 100%;
+    }
+
+    .contact-button a {
+        font-size: min(calc((28 / 14.4) * 1vw), 28px);
+    }
+}

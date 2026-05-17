@@ -1,0 +1,215 @@
+body {
+    font-family: "DM Sans", Helvetica, sans-serif;
+    background-color: #001b40;
+    background-image: linear-gradient(30deg, #511538 84%, #001b40 100%);
+    overflow: hidden;
+    margin: 0;
+}
+
+#loading-screen {
+    position: fixed;
+    visibility: visible;
+    padding-top: 40%;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5%;
+}
+
+.loading-bar {
+    height: 24px;
+    border-radius: 999px;
+    border: 3px solid white;
+    width: 60%;
+    padding: 5px;
+}
+
+.loading-bar-fill {
+    border-radius: 999px;
+    background-color: white;
+    height: 100%;
+    width: 0%;
+}
+
+#scroll-clip {
+    visibility: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+}
+
+.white-bg-section {
+    position: absolute;
+    top: 40vh;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 8vw 0 8vw 0;
+    box-shadow: 0px 0px 10vw 0vw #000e2270;
+    z-index: -3;
+}
+
+.textbox {
+    width: 100%;
+    margin-top: 10vh;
+}
+
+h1,
+.loading-text {
+    margin: 0;
+    font-weight: 700;
+    font-size: 9vw;
+    color: #ffffff;
+    text-shadow: 0 0 3vw #000e22;
+    text-align: center;
+}
+
+h1 > .topline {
+    font-size: 16vw;
+}
+
+h1 > .botline {
+    font-size: 7.4vw;
+}
+
+#model {
+    position: fixed;
+    aspect-ratio: 2/1;
+    /* border: 1px solid red; */
+    bottom: 24%;
+    width: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+h2,
+.project-link-bold {
+    font-weight: 700;
+    font-size: 6vw;
+    color: #110f0d;
+    margin: 0;
+}
+
+p {
+    margin-top: 2%;
+    font-size: 4vw;
+    color: #110f0d;
+}
+
+.project-link {
+    font-size: 4vw;
+    color: #110f0d;
+}
+
+.floater {
+    position: relative;
+    margin-top: 10vh;
+    padding-left: 3%;
+    width: 80%;
+    z-index: 0;
+    border-left: 1vw solid #813160;
+    transition: 0.15s all ease-out;
+}
+
+.floater.left {
+    left: -80%;
+}
+
+.floater.right {
+    left: 100%;
+}
+
+.floater.inview {
+    left: 10%;
+}
+
+#dizzy-text {
+    text-align: center;
+    margin-bottom: 25vw;
+    padding: 0 10%;
+}
+
+@media only screen and (min-width: 568px) {
+    body {
+        background-image: linear-gradient(30deg, #511538 85%, #001b40 100%);
+    }
+
+    #loading-screen {
+        padding-top: 20vw;
+    }
+
+    .loading-text {
+        font-size: min(calc((70 / 14.4) * 1vw), 70px);
+    }
+
+    .loading-bar {
+        height: 36px;
+        border: 4px solid white;
+        padding: 6px;
+        width: 30%;
+    }
+
+    .white-bg-section {
+        top: 0;
+    }
+
+    .textbox {
+        width: 50%;
+        margin-top: 30vh;
+    }
+
+    h1 {
+        font-size: min(calc((60 / 14.4) * 1vw), 60px);
+        color: #110f0d;
+        text-shadow: none;
+    }
+
+    h1 > .topline {
+        font-size: min(calc((121 / 14.4) * 1vw), 121px);
+    }
+
+    h1 > .botline {
+        font-size: min(calc((49 / 14.4) * 1vw), 49px);
+    }
+
+    #model {
+        width: 60%;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        bottom: unset;
+    }
+
+    h2,
+    .project-link-bold {
+        font-size: min(calc((30 / 14.4) * 1vw), 30px);
+    }
+
+    p,
+    .project-link {
+        font-size: min(calc((20 / 14.4) * 1vw), 20px);
+    }
+
+    .floater {
+        margin-top: 15vh;
+        padding-left: 1vw;
+        width: 30%;
+        border-left: 0.3vw solid #813160;
+    }
+
+    .floater.left,
+    .floater.right,
+    .floater.inview {
+        left: 10%;
+    }
+
+    #dizzy-text {
+        margin-bottom: 8vw;
+    }
+}
